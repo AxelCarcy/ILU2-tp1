@@ -74,15 +74,19 @@ public class Village {
 		}
 		
 		private void afficherMarche() {
+			int nbEtalVide = 0;
 			StringBuilder chaine = new StringBuilder("Les étals occupés du marché sont : ");
-			for (int i = 0, j = 0; i < etals.length; i++) {
+			for (int i = 0; i < etals.length; i++) {
 				if (etals[i].isEtalOccupe()) {
-					
+					chaine.append(etals[i]);
 				}
+				nbEtalVide ++;
 			}
-			
+			chaine.append("Il reste " +
+					nbEtalVide + " étals non utilisés dans le marché.\n");
 		}
 	}
+	
 	
 	public String getNom() {
 		return nom;
